@@ -1,0 +1,15 @@
+#class tools::wcsv::ntuple
+#title Energy Deposit
+#separator 44
+#vector_separator 59
+#column double Eabs
+0
+0.0641746
+0.165815
+0
+0.165852
+0.165843
+0.165904
+0.165875
+0
+0.16581

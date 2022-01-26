@@ -1,0 +1,30 @@
+# test38
+#
+/control/verbose 2
+/run/initialize
+
+#
+/gps/particle gamma
+
+
+
+## set source position 
+/gps/position 0 0 0 
+
+## set source momentum direction
+/gps/direction 0 0 1
+
+## set source type, note: the ang/type iso (isometric) is the key argument to getting the point source to work
+
+
+/gps/pos/type Point
+/gps/ang/type iso
+
+## set particle energy
+/gps/energy 165. keV
+
+/control/execute vis.mac
+
+/analysis/setFileName test38
+
+/run/beamOn 10

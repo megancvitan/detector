@@ -1,0 +1,7 @@
+/home/mcvita/detector/build/CMakeFiles/install/strip.dir
+/home/mcvita/detector/build/CMakeFiles/install/local.dir
+/home/mcvita/detector/build/CMakeFiles/install.dir
+/home/mcvita/detector/build/CMakeFiles/list_install_components.dir
+/home/mcvita/detector/build/CMakeFiles/rebuild_cache.dir
+/home/mcvita/detector/build/CMakeFiles/edit_cache.dir
+/home/mcvita/detector/build/CMakeFiles/detector1.dir

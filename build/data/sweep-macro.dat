@@ -1,0 +1,90 @@
+/gps/energy 0.0020 MeV
+/analysis/setFileName a0
+/run/beamOn 100000
+
+
+/gps/energy 0.0040 MeV
+/analysis/setFileName a1
+/run/beamOn 100000
+
+
+/gps/energy 0.0080 MeV
+/analysis/setFileName a2
+/run/beamOn 100000
+
+
+/gps/energy 0.0160 MeV
+/analysis/setFileName a3
+/run/beamOn 100000
+
+
+/gps/energy 0.0320 MeV
+/analysis/setFileName a4
+/run/beamOn 100000
+
+
+/gps/energy 0.0640 MeV
+/analysis/setFileName a5
+/run/beamOn 100000
+
+
+/gps/energy 0.1280 MeV
+/analysis/setFileName a6
+/run/beamOn 100000
+
+
+/gps/energy 0.2560 MeV
+/analysis/setFileName a7
+/run/beamOn 100000
+
+
+/gps/energy 0.5120 MeV
+/analysis/setFileName a8
+/run/beamOn 100000
+
+
+/gps/energy 1.0240 MeV
+/analysis/setFileName a9
+/run/beamOn 100000
+
+
+/gps/energy 2.0480 MeV
+/analysis/setFileName a10
+/run/beamOn 100000
+
+
+/gps/energy 4.0960 MeV
+/analysis/setFileName a11
+/run/beamOn 100000
+
+
+/gps/energy 8.1920 MeV
+/analysis/setFileName a12
+/run/beamOn 100000
+
+
+/gps/energy 16.3840 MeV
+/analysis/setFileName a13
+/run/beamOn 100000
+
+
+/gps/energy 32.7680 MeV
+/analysis/setFileName a14
+/run/beamOn 100000
+
+
+0.0020
+0.0040
+0.0080
+0.0160
+0.0320
+0.0640
+0.1280
+0.2560
+0.5120
+1.0240
+2.0480
+4.0960
+8.1920
+16.3840
+32.7680

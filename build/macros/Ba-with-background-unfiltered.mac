@@ -1,0 +1,197 @@
+## two sources, one is Ba (or whichever you switch it to)  second is Background
+
+
+
+
+####################
+#     Run 1        #
+####################
+
+
+
+/run/initialize
+
+
+
+#####################
+## Source 1 (Ba139) #
+#####################
+
+
+/gps/source/add 1
+
+/gps/particle gamma
+
+/gps/position 0 0 0
+
+/gps/direction 0 0 1
+
+/gps/pos/type Point
+/gps/ang/type iso
+
+/gps/ene/type Arb
+/gps/hist/file ./data/Ba139-G4Hist.dat
+/gps/hist/inter Lin
+
+
+##########################
+## Source 2 (Background) #
+##########################
+
+/gps/source/add 0.0000000001
+
+/gps/particle gamma
+
+/gps/position 0 0 0
+
+/gps/direction 0 0 1
+
+/gps/pos/type Point
+/gps/ang/type iso
+
+/gps/ene/type Arb
+/gps/hist/file ./data/Background-G4Hist.dat
+/gps/hist/inter Lin
+
+
+
+##########################
+#    Change filename     #
+##########################
+
+/analysis/setFileName nofilter-multiple-Ba
+/run/beamOn 100000
+
+
+
+
+
+
+
+
+
+
+
+#################
+#     Run 2     #
+#################
+
+
+## two sources, one is Ba (or whichever you switch it to)  second is Background
+
+/run/initialize
+
+
+
+#####################
+## Source 1 (Ba139) #
+#####################
+
+
+/gps/source/add 0.0000000000001
+
+/gps/particle gamma
+
+/gps/position 0 0 0
+
+/gps/direction 0 0 1
+
+/gps/pos/type Point
+/gps/ang/type iso
+
+/gps/ene/type Arb
+/gps/hist/file ./data/Ba139-G4Hist.dat
+/gps/hist/inter Lin
+
+
+##########################
+## Source 2 (Background) #
+##########################
+
+/gps/source/add 1
+
+/gps/particle gamma
+
+/gps/position 0 0 0
+
+/gps/direction 0 0 1
+
+/gps/pos/type Point
+/gps/ang/type iso
+
+/gps/ene/type Arb
+/gps/hist/file ./data/Background-G4Hist.dat
+/gps/hist/inter Lin
+
+
+
+##########################
+#    Change filename     #
+##########################
+
+/analysis/setFileName nofilter-multiple-bgd
+/run/beamOn 100000
+
+
+
+
+
+#################
+#     Run 3     #
+#################
+
+/run/initialize
+
+
+
+#####################
+## Source 1 (Ba139) #
+#####################
+
+
+/gps/source/add 1
+
+/gps/particle gamma
+
+/gps/position 0 0 0
+
+/gps/direction 0 0 1
+
+/gps/pos/type Point
+/gps/ang/type iso
+
+/gps/ene/type Arb
+/gps/hist/file ./data/Ba139-G4Hist.dat
+/gps/hist/inter Lin
+
+
+##########################
+## Source 2 (Background) #
+##########################
+
+/gps/source/add 1
+
+/gps/particle gamma
+
+/gps/position 0 0 0
+
+/gps/direction 0 0 1
+
+/gps/pos/type Point
+/gps/ang/type iso
+
+/gps/ene/type Arb
+/gps/hist/file ./data/Background-G4Hist.dat
+/gps/hist/inter Lin
+
+
+
+##########################
+#    Change filename     #
+##########################
+
+/analysis/setFileName nofilter-multiple-both
+/run/beamOn 100000
+
+
+

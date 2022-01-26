@@ -1,0 +1,49 @@
+This folder contains the macros I used.
+
+a $ indicates what you need to type into the terminal. Example : $./detector1  means type : ./detector1   into the terminal
+
+
+to run a macro type:
+
+$./detector1 ./macros/test.mac
+
+into terminal while in /build folder
+
+
+
+
+###### test-viewer.mac ###
+
+The first test you should run, this macro gives a mono-energetic point source run with visualisation (10 events should run quickly)
+
+To get the viewer to work, you need to first run  $./detector1
+The viewer should pop up and then ">Idle will appear in the terminal.
+To exectuer the macro type $/control/execute ./macros/test-viewer
+
+This should run 10 monoenergetic events (165 keV) towards the detector and rotate the viewer to see the events and the detector.
+
+To exit the visualiser type: $exit
+
+Notes on running visualizer:
+I would suggest opening the visualizer and running 10 events when doing any changes to geometry of the detector or the source location. Just to be sure that everything is working. However, running anything more than 100 events takes a much larger computing time and is a waste of time, its better to run macros without visualisation.
+
+
+
+###### hist-from-file.mac ####
+
+This macro makes a point source with energy taken from a histogram file that has been written in the format that Geant4 accepts.
+(The format G4 accepts is a file with each point written on a new line and energy in Mev in the first column and intensity written in the second column with the two columns separated by a space. See Hist-example.dat)
+
+
+
+##### Ba-with-background.mac ######
+
+Probably the most important macro in this folder. This allows you to have two import sources (Barium and Background) or whichever two sources you like.
+
+The two most important lines in this macro will be /gps/source/add 1    and /gps/hist/file _____   
+/source/add __ takes as input the intensity of the particle. The two intensities are taken as a relative, so if both sources have the same intensity then half of the particles will be source 1 and half source 2.   
+
+If you wanted to have a source with intensity 0 this will not work, instead use a very small intensity like 0.0000001
+
+remember if making a comparison to also change the file name at the bottome of the macro file.
+You can change the source to any source that you have made that has a hist file.

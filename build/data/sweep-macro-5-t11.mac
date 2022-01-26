@@ -1,0 +1,82 @@
+/run/initialize
+/gps/particle gamma
+/gps/position 0 0 0 cm
+/gps/direction 0 0 1
+/gps/pos/type Point
+/gps/ang/type iso
+
+/gps/energy 0.0020 MeV
+/analysis/setFileName 5-t11-0
+/run/beamOn 100000
+
+
+/gps/energy 0.0040 MeV
+/analysis/setFileName 5-t11-1
+/run/beamOn 100000
+
+
+/gps/energy 0.0080 MeV
+/analysis/setFileName 5-t11-2
+/run/beamOn 100000
+
+
+/gps/energy 0.0160 MeV
+/analysis/setFileName 5-t11-3
+/run/beamOn 100000
+
+
+/gps/energy 0.0320 MeV
+/analysis/setFileName 5-t11-4
+/run/beamOn 100000
+
+
+/gps/energy 0.0640 MeV
+/analysis/setFileName 5-t11-5
+/run/beamOn 100000
+
+
+/gps/energy 0.1280 MeV
+/analysis/setFileName 5-t11-6
+/run/beamOn 100000
+
+
+/gps/energy 0.2560 MeV
+/analysis/setFileName 5-t11-7
+/run/beamOn 100000
+
+
+/gps/energy 0.5120 MeV
+/analysis/setFileName 5-t11-8
+/run/beamOn 100000
+
+
+/gps/energy 1.0240 MeV
+/analysis/setFileName 5-t11-9
+/run/beamOn 100000
+
+
+/gps/energy 2.0480 MeV
+/analysis/setFileName 5-t11-10
+/run/beamOn 100000
+
+
+/gps/energy 4.0960 MeV
+/analysis/setFileName 5-t11-11
+/run/beamOn 100000
+
+
+/gps/energy 8.1920 MeV
+/analysis/setFileName 5-t11-12
+/run/beamOn 100000
+
+
+/gps/energy 16.3840 MeV
+/analysis/setFileName 5-t11-13
+/run/beamOn 100000
+
+
+/gps/energy 32.7680 MeV
+/analysis/setFileName 5-t11-14
+/run/beamOn 100000
+
+

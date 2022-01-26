@@ -1,0 +1,97 @@
+/run/initialize
+
+
+## set particle as gamma
+/gps/particle gamma     
+
+
+
+## set source position 
+/gps/position 0 0 2.5 cm
+
+## set source momentum direction
+/gps/direction 0 0 1
+
+## set source type, note: the ang/type iso (isometric) is the key argument to getting the point source to work
+
+
+/gps/pos/type Point
+/gps/ang/type iso
+
+
+
+# in this case I'm making a monoenergetic energy because I want to create many files with just measuring the photo-peak at each respective energy
+
+/gps/energy 0.0020 MeV
+/analysis/setFileName 0
+/run/beamOn 100000
+
+
+/gps/energy 0.0040 MeV
+/analysis/setFileName 1
+/run/beamOn 100000
+
+
+/gps/energy 0.0080 MeV
+/analysis/setFileName 2
+/run/beamOn 100000
+
+
+/gps/energy 0.0160 MeV
+/analysis/setFileName 3
+/run/beamOn 100000
+
+
+/gps/energy 0.0320 MeV
+/analysis/setFileName 4
+/run/beamOn 100000
+
+
+/gps/energy 0.0640 MeV
+/analysis/setFileName 5
+/run/beamOn 100000
+
+
+/gps/energy 0.1280 MeV
+/analysis/setFileName 6
+/run/beamOn 100000
+
+
+/gps/energy 0.2560 MeV
+/analysis/setFileName 7
+/run/beamOn 100000
+
+
+/gps/energy 0.5120 MeV
+/analysis/setFileName 8
+/run/beamOn 100000
+
+
+/gps/energy 1.0240 MeV
+/analysis/setFileName 9
+/run/beamOn 100000
+
+
+/gps/energy 2.0480 MeV
+/analysis/setFileName 10
+/run/beamOn 100000
+
+
+/gps/energy 4.0960 MeV
+/analysis/setFileName 11
+/run/beamOn 100000
+
+
+/gps/energy 8.1920 MeV
+/analysis/setFileName 12
+/run/beamOn 100000
+
+
+/gps/energy 16.3840 MeV
+/analysis/setFileName 13
+/run/beamOn 100000
+
+
+/gps/energy 32.7680 MeV
+/analysis/setFileName 14
+/run/beamOn 100000

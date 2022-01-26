@@ -1,0 +1,139 @@
+These are the edits made after I got /run/beamOn working
+
+***** Remember always source /home/aafanassieva/geant/geant4.10.3/bin/geant4.sh
+
+-----// Getting Energy Deposited in Crystal For Incoming Gammas //----
+
+Changed det1DetectorConstruction.cc to add the Ge as a scroing volume
+accordingly changed .hh
+this didn't crash anything while using /run/beamOn 10
+
+add det1EventAction.cc to start actually scoring.
+accordingly added .hh
+(expecting this to cause error since event action talks to run action but no changes were made to runaction)
+- yes this happened, commented out re:error
+- this doesn't work because event action fully relies on run action IE det1EventAction( RunAction  )
+
+Added required things to Run Action.cc and .hh
+accordingly uncommented EventAction.cc
+
+Ok so now it works (makes and runs) but doesn't count edep properly ( says 0 when it shouldn't be zero)
+
+Added Event action stuff into Action Initialization.cc 
+
+I have a suspicion that it is because I need stepping action cc
+
+stepping action is being annoying I get error that there is an undefined reference to steppingaction(eventaction) in action initialisation which i don't understand
+probably because I save steppingaction.cc in folder /detector1 instead of /detector1/src
+
+after adding stepping action.cc into /src it works/ i get a non-zero answer for the energy deposited
+
+next step is to see how the energy changes with the number of photons?
+
+500keV 10  (5MeV total): 2.96 MeV
+500keV 100 (50MeV total): 21.6 MeV (so this is pretty much scaling evenly which makes sense)
+
+1MeV 10 (10MeV total): 5.9271 MeV (this seems fine)
+
+updated thisworks/
+
+in /mydetector:
+
+rsync -r detector1/ thisworks/ 
+
+-----// Adding Output to .csv for plotting //-----
+
+reference: https://indico.cern.ch/event/776050/contributions/3241822/attachments/1789267/2921102/Analysis-v3.pdf
+
+following the reference start at page10 of the powerpoint
+
+this worked by outputting a file that made a histogram but this is not the format i want, so I'm going to rewrite those bits of code to follow the ntuple method from the ppt linked. (starts on page 17)
+
+this seemed to work let's plot the data in a jupyter notebook in /build
+
+so this all works and it gives predicted results which is great! I'm going to rsync so that we can keep this progress
+
+things to note: 
+- if you change anything you should change the .csv file name in det1RunAction.cc Begin of RunAction (this should be labelled so you can see where this is)
+- if you change the filename also change it in the jupyter notebook
+- you'll have to save the .cc files and make in /build to keep the changes
+- I'll look into a way of not having to change the cc files to make these changes
+
+--------// Trying to get G4Cin to work so that I don't need to change the .cc files every time//------
+
+So I can change the file_name now for the output.
+All the code is a few lines labelled in being of run action in RunAction.cc
+
+
+First run the program ($ at the beginning of the line means terminal comand. so $ ./detector1 means type ./detector1 in terminal)
+
+$ ./detector1
+
+then stuff should happen and Idle> will appear
+
+$ Idle> run/beamOn 10
+
+this will run 10 beams but when it says ###Run1 starts. type the name of the file you want
+
+$ hello-test
+
+the simulation should run and the output file will be called 
+
+hello-test_nt_Ntuple.csv
+
+you can input this csv into the jupyter notebook to view the results
+
+------// Inputting Gamma energy outside the .csv file //-------
+
+this works by typing /gun/energy 100. keV 
+or whatever energy you want into idle
+
+-----// Changing to point source //----
+
+this involves some inspiration from extended example TestEm04. 
+edits made only in PrimaryGenerator action to achieve this.
+
+rsync -r detector1/ thisworks/
+
+
+------// reading gamma source input from file //------
+
+--// step 1: change gun to gps //--
+
+I think we are going to have to change from particly gun to general particle source (GPS) to achieve this
+
+First reference that I am looking at to achieve this is:
+http://grupo.us.es/geterus/images/pdf/ieav-ita-2014/L12-Primary_particle.pdf
+
+Second reference at the bottom of the page there is a reference on how to use /gps/hist to make a histogram input file for the energy spectrum:
+https://geant4-userdoc.web.cern.ch/UsersGuides/ForApplicationDeveloper/html/GettingStarted/generalParticleSource.html
+
+
+First edit to my code is change from Particle Gun class to GPS class. this will change the Idle /gun/ commands to /gps/ commands
+
+Update: macro is working by running ./detector1
+
+and then in Idle>/control/execute test1.mac
+
+rsync -r detector1/ thisworks/
+
+--// step 2: get it to read a simple histogram for energy //--
+
+this all works good!!
+
+
+
+
+
+
+
+--- //  how I got auto naming to work // ---
+
+I wasn't getting /analysis/setFileName working, I kept getting segfaults
+
+What you need to do is in RunAction.cc make a fFilename (G4String) defined in RunAction.hh, 
+You need to call analysis manager and name the file in the first RunAction Command (Line 29 in RunAction.cc) and this should work.
+
+In the macro, /analysis/setFileName needs to go just before /run/beamOn
+
+
