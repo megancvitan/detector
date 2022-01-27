@@ -1,0 +1,4 @@
+[ZoneTransfer]
+ZoneId=3
+ReferrerUrl=https://www-nds.iaea.org/relnsd/vcharthtml/VChartHTML.html
+HostUrl=https://www-nds.iaea.org/relnsd/LCServlet?qry=NUCID=140LA@@@DEC_RAD=TYPE_A@;@G@@@ORDER=11&getcsv=G&downloadtoken=1643333169288&container=relnsd

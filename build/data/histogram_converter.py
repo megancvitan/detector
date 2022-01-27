@@ -1,13 +1,17 @@
+#! /usr/bin/python3
+
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
 import csv
+import sys
 
 # Import the file from https://www-nds.iaea.org/relnsd/vcharthtml/VChartHTML.html
 # Go to gamma table, download csv, upload file to this folder, rename file to the corresponding isotope 
 
 # Isotope name, CHANGE THIS EVERY TIME
-isotope = 'Ba140'
+isotope = sys.argv[1]
+nrow = int(sys.argv[2])
 
 # Bring file to the code
 # Change this for every raw data file for each isotope
@@ -20,7 +24,7 @@ w = open(isotope+'-G4Hist.dat','w')
 names = ['energy','intensity']
 
 # Import only columns of interest from file
-data = pd.read_csv(file, header = 0, usecols=[0,2], names=names, nrows=28)
+data = pd.read_csv(file, header = 0, usecols=[0,2], names=names, nrows=nrow)
 
 # Print data and check that it matches with what is on livechart
 # print(data)

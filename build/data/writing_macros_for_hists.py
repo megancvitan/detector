@@ -1,3 +1,5 @@
+#! /usr/bin/python3
+
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
@@ -38,7 +40,7 @@ plt.xlabel('Gamma Energy MeV')
 plt.ylabel('Intensity')
 plt.xlim(1e-3,10)
 
-plt.savefig('source_figures/Ba139-source.jpg')
+plt.savefig('Ba139-source.jpg')
 #plt.show()
 
 # Writing the first part of the macro (doesn't change the filename)
@@ -89,7 +91,7 @@ def write_macro_end(w,name):
 # Write the whole macro:
 def write_macro(name):
     
-    file = str('sweep-macro-%s.mac' %name)
+    file = str('sweep_macros/sweep-macro-%s.mac' %name)
     w = open(file,'w')     
     
     write_macro_top(w)
