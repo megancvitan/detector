@@ -1,6 +1,5 @@
 Let's measure z=1cm, 3, 5, 7, 9, 11
 
-
 Step1:
 
 Start by changing thickness in detectorgeometry.cc in /src
@@ -9,10 +8,9 @@ Save
 in /build:
 make
 
-
 Step 2:
 
-Change filename in /build/data  Making histograms from scratch
+Change filename in /build/data  writing_macros_for_hists
 
 Step 3:
 
@@ -22,4 +20,4 @@ in /build run:
 
 Step4:
 
-Plot in plotting Photopeak by running E_plot('filename')
+Plot in plotting_geant_photopeak by running E_plot('filename')

@@ -19,7 +19,6 @@ det1RunAction::det1RunAction()
  : G4UserRunAction(), fFileName("test-123.csv"), fEdep(0.)
 {
 
-    
   // Register accumulable to the accumulable manager
   G4AccumulableManager* accumulableManager =         G4AccumulableManager::Instance();
   accumulableManager->RegisterAccumulable(fEdep);
@@ -27,9 +26,8 @@ det1RunAction::det1RunAction()
   G4AnalysisManager* analysis = G4AnalysisManager::Instance();
      
   analysis->SetVerboseLevel(1);
-  analysis->SetNtupleDirectoryName("data");
+  analysis->SetNtupleDirectoryName("testing");
   analysis->SetFileName(fFileName);
-
   
 }
 
@@ -44,21 +42,14 @@ det1RunAction::~det1RunAction()
 
 void det1RunAction::BeginOfRunAction(const G4Run*)
 {
-
-    
-    // reset accumulables to their initial values
+  // Reset accumulables to their initial values
   G4AccumulableManager* accumulableManager = G4AccumulableManager::Instance();
   accumulableManager->Reset();
     
-      
   G4AnalysisManager* analysis = G4AnalysisManager::Instance();
   
-  
-    
-    
     //Open an output file
     analysis ->OpenFile();       // change this everytime
-    
     
     //Create Histograms?
     analysis -> CreateNtuple("MyNtuple","Energy Deposit");

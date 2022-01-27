@@ -1,22 +1,17 @@
-## two sources, one is Ba (or whichever you switch it to)  second is Background
-
-
-
+# Two sources, one is an isotope (in this case Ba) and the second one is Background
 
 ####################
 #     Run 1        #
 ####################
 
-
-
 /run/initialize
-
-
 
 #####################
 ## Source 1 (Ba139) #
 #####################
 
+# Define the first source.
+# This is a point gamma source, with an energy spectrum specified by the Ba-139 histogram data
 
 /gps/source/add 1
 
@@ -32,7 +27,6 @@
 /gps/ene/type Arb
 /gps/hist/file ./data/Ba139-G4Hist.dat
 /gps/hist/inter Lin
-
 
 ##########################
 ## Source 2 (Background) #
@@ -54,7 +48,6 @@
 /gps/hist/inter Lin
 
 
-
 ##########################
 #    Change filename     #
 ##########################
@@ -62,31 +55,15 @@
 /analysis/setFileName multiple-Ba
 /run/beamOn 100000
 
-
-
-
-
-
-
-
-
-
-
 #################
 #     Run 2     #
 #################
 
-
-## two sources, one is Ba (or whichever you switch it to)  second is Background
-
 /run/initialize
-
-
 
 #####################
 ## Source 1 (Ba139) #
 #####################
-
 
 /gps/source/add 0.0000000000001
 
@@ -103,7 +80,6 @@
 /gps/hist/file ./data/Ba139-G4Hist.dat
 /gps/hist/inter Lin
 
-
 ##########################
 ## Source 2 (Background) #
 ##########################
@@ -123,8 +99,6 @@
 /gps/hist/file ./data/Background-G4Hist.dat
 /gps/hist/inter Lin
 
-
-
 ##########################
 #    Change filename     #
 ##########################
@@ -132,22 +106,15 @@
 /analysis/setFileName multiple-bgd
 /run/beamOn 100000
 
-
-
-
-
 #################
 #     Run 3     #
 #################
 
 /run/initialize
 
-
-
 #####################
 ## Source 1 (Ba139) #
 #####################
-
 
 /gps/source/add 1
 
@@ -164,7 +131,6 @@
 /gps/hist/file ./data/Ba139-G4Hist.dat
 /gps/hist/inter Lin
 
-
 ##########################
 ## Source 2 (Background) #
 ##########################
@@ -183,8 +149,6 @@
 /gps/ene/type Arb
 /gps/hist/file ./data/Background-G4Hist.dat
 /gps/hist/inter Lin
-
-
 
 ##########################
 #    Change filename     #

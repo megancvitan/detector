@@ -1,22 +1,17 @@
-## two sources, one is Ba (or whichever you switch it to)  second is Background
-
-
-
+# Two sources, one is an isotope (in this case Ba) and the second one is Background
 
 ####################
 #     Run 1        #
 ####################
 
-
-
 /run/initialize
-
-
 
 #####################
 ## Source 1 (Ba139) #
 #####################
 
+# Define the first source.
+# This is a point gamma source, with an energy spectrum specified by the Ba-139 histogram data
 
 /gps/source/add 1
 
@@ -33,10 +28,11 @@
 /gps/hist/file ./data/Ba139-G4Hist.dat
 /gps/hist/inter Lin
 
-
 ##########################
 ## Source 2 (Background) #
 ##########################
+
+# Define the second source as the background. Set intensity to "0" by using a very small number to prevent crashing the program
 
 /gps/source/add 0.0000000001
 
@@ -53,8 +49,6 @@
 /gps/hist/file ./data/Background-G4Hist.dat
 /gps/hist/inter Lin
 
-
-
 ##########################
 #    Change filename     #
 ##########################
@@ -63,31 +57,19 @@
 /run/beamOn 100000
 
 
-
-
-
-
-
-
-
-
-
 #################
 #     Run 2     #
 #################
 
-
-## two sources, one is Ba (or whichever you switch it to)  second is Background
+# Two sources, one is an isotope (in this case Ba) and the second one is Background
 
 /run/initialize
-
-
 
 #####################
 ## Source 1 (Ba139) #
 #####################
 
-
+# Set the intensity to 0
 /gps/source/add 0.0000000000001
 
 /gps/particle gamma
@@ -108,6 +90,7 @@
 ## Source 2 (Background) #
 ##########################
 
+# Set the intensity to 1
 /gps/source/add 1
 
 /gps/particle gamma
@@ -123,8 +106,6 @@
 /gps/hist/file ./data/Background-G4Hist.dat
 /gps/hist/inter Lin
 
-
-
 ##########################
 #    Change filename     #
 ##########################
@@ -132,22 +113,15 @@
 /analysis/setFileName nofilter-multiple-bgd
 /run/beamOn 100000
 
-
-
-
-
 #################
 #     Run 3     #
 #################
 
 /run/initialize
 
-
-
 #####################
 ## Source 1 (Ba139) #
 #####################
-
 
 /gps/source/add 1
 
@@ -163,7 +137,6 @@
 /gps/ene/type Arb
 /gps/hist/file ./data/Ba139-G4Hist.dat
 /gps/hist/inter Lin
-
 
 ##########################
 ## Source 2 (Background) #
@@ -184,14 +157,11 @@
 /gps/hist/file ./data/Background-G4Hist.dat
 /gps/hist/inter Lin
 
-
-
 ##########################
 #    Change filename     #
 ##########################
 
 /analysis/setFileName nofilter-multiple-both
 /run/beamOn 100000
-
 
 

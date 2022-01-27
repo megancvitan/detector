@@ -1,37 +1,35 @@
 /run/initialize
 
-
-## set particle as gamma
+# Set particle as gamma
 /gps/particle gamma     
 
-
-
-## set source position 
+# Set source position 
 /gps/position 0 0 0
 
-## set source momentum direction
+# Set source momentum direction
 /gps/direction 0 0 1
 
-## set source type, note: the ang/type iso (isometric) is the key argument to getting the point source to work
+# Set source type, note: the ang/type iso (isometric) is the key argument to getting the point source to work
 
 /gps/pos/type Point
 /gps/ang/type iso
 
-
-## set the energy to be defined by user through histogram
-
-## tells us that the histogram is going to be a range of energies
-## choose gamma source here
+# Set the energy 
+# This time, to be defined by user through histogram
+# Tells us that the histogram is going to be a range of energies
+# Choose gamma source here
 
 /gps/ene/type Arb
 /gps/hist/file ./data/Ba139-G4Hist.dat
+
+# Set the interpolation type 
+# Use linear in this example
+
 /gps/hist/inter Lin
 
+# Name the output data file
+/analysis/setFileName test-hist.csv
 
-#
-
-/analysis/setFileName test-hist
-
-
+# Run 100,000 events
 /run/beamOn 100000
 

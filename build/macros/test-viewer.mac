@@ -1,28 +1,33 @@
 /run/initialize
 
-## set particle as gamma
+# Set particle as gamma
 /gps/particle gamma     
 
-
-## set source position 
+# Set source position
+# Set it in the centre
 /gps/position 0 0 0 
 
-## set source momentum direction
+# Set source momentum direction
+# Here we will set it in z direction
 /gps/direction 0 0 1
 
-## set source type, note: the ang/type iso (isometric) is the key argument to getting the point source to work
-
+# Set source type
+# The angular distribution (/ang) is to control the direction that the particles emanate from
+# For a point source, we use isotropic distribution, uniform 4pi flux
+# Note: the /ang/type iso (isometric) is the key argument to getting the point source to work
+# This is also the default setting
 
 /gps/pos/type Point
 /gps/ang/type iso
 
-## set particle energy
+# Set particle energy
+# The default energy unit is MeV; need to specify otherwise
+
 /gps/energy 165. keV
 
 
-##Run
+# Run 10 events of this specified particle
 /run/beamOn 10
-
 
 
 /vis/viewer/set/viewpointThetaPhi 90. 0.

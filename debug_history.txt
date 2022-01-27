@@ -1,10 +1,10 @@
 These are the edits made after I got /run/beamOn working
 
-***** Remember always source /home/aafanassieva/geant/geant4.10.3/bin/geant4.sh
+
 
 -----// Getting Energy Deposited in Crystal For Incoming Gammas //----
 
-Changed det1DetectorConstruction.cc to add the Ge as a scroing volume
+Changed det1DetectorConstruction.cc to add the Ge as a scoring volume
 accordingly changed .hh
 this didn't crash anything while using /run/beamOn 10
 

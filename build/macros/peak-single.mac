@@ -1,0 +1,57 @@
+
+# This macro runs through multiple runs, in order to find a nice efficiency scan, unfortunately I haven't got the naming of the files automated so this still needs to be done manually while running the macro.  
+
+# Type into terminal in /build file:
+
+# ./detector1 peak-single.mac
+
+# >> filename:
+# peak1
+# peak2
+# peak3
+# peak4
+
+#########
+
+/run/initialize
+
+# Set particle as gamma
+/gps/particle gamma     
+
+# Set source position 
+/gps/position 0 0 0 
+
+# Set source momentum direction
+/gps/direction 0 0 1
+
+# Set source type, note: the ang/type iso (isometric) is the key argument to getting the point source to work
+/gps/pos/type Point
+/gps/ang/type iso
+
+# Omit these next 2 lines if you want a complete point source
+# Comment out if you want less zeros
+# /gps/ang/mintheta 90. deg
+# /gps/ang/maxtheta 180. deg
+
+# Set the energy to be defined by user through histogram
+#/gps/ene/type Arb
+/gps/ene/type User
+
+# Tells us that the histogram is going to be a range of energies
+/gps/hist/type energy
+
+# Gives point 1 on histogram where first value is [energy (MeV)] second value is [weight (0-1)]
+
+/gps/hist/point  1 1
+
+# Run simulation for 100,000 events
+/run/beamOn 100000
+
+#/gps/hist/reset energy
+#/gps/hist/point 10 1
+
+
+#/run/beamOn 100000
+
+
+/vis/viewer/set/viewpointThetaPhi 90. 0.
